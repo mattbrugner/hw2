@@ -70,12 +70,141 @@
 # Use `Model.destroy_all` code.
 # TODO!
 
+Movie.destroy_all
+Person.destroy_all
+Role.destroy_all
+
+
 # Generate models and tables, according to the domain model
 # TODO!
 
 # Insert data into your database that reflects the sample data shown above
 # Do not use hard-coded foreign key IDs.
 # TODO!
+
+new_movie = Movie.new
+new_movie.title = "Batman Begins"
+new_movie.year_released = "2005"
+new_movie.rated = "PG-13"
+new_movie.save
+
+new_movie = Movie.new
+new_movie.title = "The Dark Knight"
+new_movie.year_released = "2008"
+new_movie.rated = "PG-13"
+new_movie.save
+
+new_movie = Movie.new
+new_movie.title = "The Dark Knight Rises"
+new_movie.year_released = "2012"
+new_movie.rated = "PG-13"
+new_movie.save
+
+new_person = Person.new
+new_person.first_name = "Christopher"
+new_person.last_name = "Nolan"
+new_person.save
+
+new_person = Person.new
+new_person.first_name = "Christian"
+new_person.last_name = "Bale"
+new_person.save
+
+new_person = Person.new
+new_person.first_name = "Michael"
+new_person.last_name = "Caine"
+new_person.save
+
+new_person = Person.new
+new_person.first_name = "Liam"
+new_person.last_name = "Neeson"
+new_person.save
+
+new_person = Person.new
+new_person.first_name = "Katie"
+new_person.last_name = "Holmes"
+new_person.save
+
+new_person = Person.new
+new_person.first_name = "Gary"
+new_person.last_name = "Oldman"
+new_person.save
+
+new_person = Person.new
+new_person.first_name = "Heath"
+new_person.last_name = "Ledger"
+new_person.save
+
+new_person = Person.new
+new_person.first_name = "Aaron"
+new_person.last_name = "Eckhart"
+new_person.save
+
+new_person = Person.new
+new_person.first_name = "Maggie"
+new_person.last_name = "Gyllenhaal"
+new_person.save
+
+new_person = Person.new
+new_person.first_name = "Tom"
+new_person.last_name = "Hardy"
+new_person.save
+
+new_person = Person.new
+new_person.first_name = "Tom"
+new_person.last_name = "Hardy"
+new_person.save
+
+new_person = Person.new
+new_person.first_name = "Joseph"
+new_person.last_name = "Gordon-Levitt"
+new_person.save
+
+new_person = Person.new
+new_person.first_name = "Anne"
+new_person.last_name = "Hathaway"
+new_person.save
+
+new_role = Role.new
+new_role.name = "Bruce Wayne"
+new_role.save
+
+new_role = Role.new
+new_role.name = "Alfred"
+new_role.save
+
+new_role = Role.new
+new_role.name = "Ra's Al Ghul"
+new_role.save
+
+new_role = Role.new
+new_role.name = "Rachel Dawes"
+new_role.save
+
+new_role = Role.new
+new_role.name = "Commissioner Gordon"
+new_role.save
+
+new_role = Role.new
+new_role.name = "Joker"
+new_role.save
+
+new_role = Role.new
+new_role.name = "Harvey Dent"
+new_role.save
+
+new_role = Role.new
+new_role.name = "Bane"
+new_role.save
+
+new_role = Role.new
+new_role.name = "John Blake"
+new_role.save
+
+new_role = Role.new
+new_role.name = "Selina Kyle"
+new_role.save
+
 
 # Prints a header for the movies output
 puts "Movies"
@@ -84,6 +213,12 @@ puts ""
 
 # Query the movies data and loop through the results to display the movies output
 # TODO!
+
+all_movies = Movie.all
+for movie in all_contacts
+    puts "#{movie.title} #{movie.year_released} #{movie.rated}"
+    for person in movie.persons puts "#{person.first_name} #{person.last_name}"
+end
 
 # Prints a header for the cast output
 puts ""
