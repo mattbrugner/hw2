@@ -83,11 +83,10 @@ Role.destroy_all
 # TODO!
 
 new_person = Person.new
-new_person.first_name = "Christopher"
-new_person.last_name = "Nolan"
+new_person.name = "Christopher Nolan"
 new_person.save
 
-nolan = Person.where({ last_name: "Nolan"})[0]
+nolan = Person.where({ name: "Christopher Nolan"})[0]
 
 new_movie = Movie.new
 new_movie.title = "Batman Begins"
@@ -115,73 +114,62 @@ dk = Movie.where({ title: "The Dark Knight"})[0]
 dkr = Movie.where({ title: "The Dark Knight Rises"})[0]
 
 new_person = Person.new
-new_person.first_name = "Christian"
-new_person.last_name = "Bale"
+new_person.name = "Christian Bale"
 new_person.save
 
 new_person = Person.new
-new_person.first_name = "Michael"
-new_person.last_name = "Caine"
+new_person.name = "Michael Caine"
 new_person.save
 
 new_person = Person.new
-new_person.first_name = "Liam"
-new_person.last_name = "Neeson"
+new_person.name = "Liam Neeson"
 new_person.save
 
 new_person = Person.new
-new_person.first_name = "Katie"
-new_person.last_name = "Holmes"
+new_person.name = "Katie Holmes"
 new_person.save
 
 new_person = Person.new
-new_person.first_name = "Gary"
-new_person.last_name = "Oldman"
+new_person.name = "Gary Oldman"
 new_person.save
 
 new_person = Person.new
-new_person.first_name = "Heath"
-new_person.last_name = "Ledger"
+new_person.name = "Heath Ledger"
 new_person.save
 
 new_person = Person.new
-new_person.first_name = "Aaron"
-new_person.last_name = "Eckhart"
+new_person.name = "Aaron Eckhart"
 new_person.save
 
 new_person = Person.new
-new_person.first_name = "Maggie"
-new_person.last_name = "Gyllenhaal"
+new_person.name = "Maggie Gyllenhaal"
 new_person.save
 
 new_person = Person.new
-new_person.first_name = "Tom"
-new_person.last_name = "Hardy"
+new_person.name = "Tom Hardy"
 new_person.save
 
 new_person = Person.new
-new_person.first_name = "Joseph"
-new_person.last_name = "Gordon-Levitt"
+new_person.name = "Joseph Gordon-Levitt"
 new_person.save
 
 new_person = Person.new
-new_person.first_name = "Anne"
-new_person.last_name = "Hathaway"
+new_person.name = "Anne Hathaway"
 new_person.save
 
-bale = Person.where({ last_name: "Bale"})[0]
-caine = Person.where({ last_name: "Caine"})[0]
-neeson = Person.where({ last_name: "Neeson"})[0]
-holmes = Person.where({ last_name: "Holmes"})[0]
-oldman = Person.where({ last_name: "Oldman"})[0]
-ledger = Person.where({ last_name: "Ledger"})[0]
-eckhart = Person.where({ last_name: "Eckhart"})[0]
-gyllenhaal = Person.where({ last_name: "Gyllenhaal"})[0]
-hardy = Person.where({ last_name: "Hardy"})[0]
-gordonl = Person.where({ last_name: "Gordon-Levitt"})[0]
-hathaway = Person.where({ last_name: "Hathaway"})[0]
+bale = Person.where({ name: "Christian Bale"})[0]
+caine = Person.where({ name: "Michael Caine"})[0]
+neeson = Person.where({ name: "Liam Neeson"})[0]
+holmes = Person.where({ name: "Katie Holmes"})[0]
+oldman = Person.where({ name: "Gary Oldman"})[0]
+ledger = Person.where({ name: "Heath Ledger"})[0]
+eckhart = Person.where({ name: "Aaron Eckhart"})[0]
+gyllenhaal = Person.where({ name: "Maggie Gyllenhaal"})[0]
+hardy = Person.where({ name: "Tom Hardy"})[0]
+gordonl = Person.where({ name: "Joseph Gordon-Levitt"})[0]
+hathaway = Person.where({ name: "Anne Hathaway"})[0]
 
-#role + movies
+#role/movies
 
 new_role = Role.new
 new_role.movie_id = bb.id
@@ -283,14 +271,19 @@ puts ""
 
 all_movies = Movie.all
 for movie in all_movies
-    puts "#{movie.title} #{movie.year_released} #{movie.rated} #{movie.person.first_name} #{movie.person.last_name}"
+    puts "#{movie.title} #{movie.year_released} #{movie.rated} #{movie.person.name}"
 end
 
 # Prints a header for the cast output
-puts ""
+
 puts "Top Cast"
-puts "========"
+puts "======"
 puts ""
 
 # Query the cast data and loop through the results to display the cast output for each movie
 # TODO!
+
+all_roles = Role.all
+for role in all_roles
+    puts "#{role.movie.title} #{role.person.name} #{role.character_name}"
+end
