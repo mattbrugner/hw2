@@ -1,6 +1,6 @@
 class Movie < ApplicationRecord
 
-    has many :roles
+    has_many :roles
     belongs_to :person
     
 end

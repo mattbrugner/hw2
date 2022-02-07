@@ -87,7 +87,7 @@ new_person.first_name = "Christopher"
 new_person.last_name = "Nolan"
 new_person.save
 
-nolan = Person.where({ first_name: "Christopher"})[0]
+nolan = Person.where({ last_name: "Nolan"})[0]
 
 new_movie = Movie.new
 new_movie.title = "Batman Begins"
@@ -110,9 +110,9 @@ new_movie.rated = "PG-13"
 new_movie.person_id = nolan.id
 new_movie.save
 
-bb = Movie.where({ title = "Batman Begins"})[0]
-dk = Movie.where({ title = "The Dark Knight"})[0]
-dkr = Movie.where({ title = "The Dark Knight Rises"})[0]
+bb = Movie.where({ title: "Batman Begins"})[0]
+dk = Movie.where({ title: "The Dark Knight"})[0]
+dkr = Movie.where({ title: "The Dark Knight Rises"})[0]
 
 new_person = Person.new
 new_person.first_name = "Christian"
@@ -169,17 +169,17 @@ new_person.first_name = "Anne"
 new_person.last_name = "Hathaway"
 new_person.save
 
-bale = Person.where ({ last_name: "Bale"})[0]
-caine = Person.where ({ last_name: "Caine"})[0]
-neeson = Person.where ({ last_name: "Neeson"})[0]
-holmes = Person.where ({ last_name: "Holmes"})[0]
-oldman = Person.where ({ last_name: "Oldman"})[0]
-ledger = Person.where ({ last_name: "Ledger"})[0]
-eckhart = Person.where ({ last_name: "Eckhart"})[0]
-gyllenhaal = Person.where ({ last_name: "Gyllenhaal"})[0]
-hardy = Person.where ({ last_name: "Hardy"})[0]
-gordonl = Person.where ({ last_name: "Gordon-Levitt"})[0]
-hathaway = Person.where ({ last_name: "Hathaway"})[0]
+bale = Person.where({ last_name: "Bale"})[0]
+caine = Person.where({ last_name: "Caine"})[0]
+neeson = Person.where({ last_name: "Neeson"})[0]
+holmes = Person.where({ last_name: "Holmes"})[0]
+oldman = Person.where({ last_name: "Oldman"})[0]
+ledger = Person.where({ last_name: "Ledger"})[0]
+eckhart = Person.where({ last_name: "Eckhart"})[0]
+gyllenhaal = Person.where({ last_name: "Gyllenhaal"})[0]
+hardy = Person.where({ last_name: "Hardy"})[0]
+gordonl = Person.where({ last_name: "Gordon-Levitt"})[0]
+hathaway = Person.where({ last_name: "Hathaway"})[0]
 
 #role + movies
 
@@ -283,7 +283,7 @@ puts ""
 
 all_movies = Movie.all
 for movie in all_movies
-    puts "#{movie.title} #{movie.year_released} #{movie.rated} #{movie.person.name}
+    puts "#{movie.title} #{movie.year_released} #{movie.rated} #{movie.person.first_name} #{movie.person.last_name}"
 end
 
 # Prints a header for the cast output
